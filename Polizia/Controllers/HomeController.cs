@@ -104,6 +104,10 @@ namespace Polizia.Controllers
             return View(verbale);
         }
 
+        public ActionResult Anagrafica()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Anagrafica(Anagrafica anagrafica)
