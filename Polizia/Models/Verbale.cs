@@ -13,5 +13,10 @@ namespace Polizia.Models
         public int DecurtamentoPunti { get; set; }
         public int IdViolazione { get; set; }
         public int IdAnagrafica { get; set; }
+
+        public string Cognome { get; set; }
+        public string Nome { get; set; }
+
+        public string Descrizione_Verbale { get; set; }
     }
 }

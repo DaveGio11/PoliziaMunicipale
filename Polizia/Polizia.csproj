@@ -125,6 +125,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Anagrafica.cs" />
+    <Compile Include="Models\Trasgressori.cs" />
     <Compile Include="Models\Verbale.cs" />
     <Compile Include="Models\Violazione.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -184,6 +185,9 @@
     <Content Include="Views\Home\Verbale.cshtml" />
     <Content Include="Views\Home\Anagrafica.cshtml" />
     <Content Include="Views\Home\Multe.cshtml" />
+    <Content Include="Views\Home\Trasgressori.cshtml" />
+    <Content Include="Views\Home\Piudieci.cshtml" />
+    <Content Include="Views\Home\Punti.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
