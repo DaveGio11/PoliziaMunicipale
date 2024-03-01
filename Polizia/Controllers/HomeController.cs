@@ -140,6 +140,39 @@ namespace Polizia.Controllers
             return View(anagrafica);
 
         }
+
+        public ActionResult Multe(Verbale verbale)
+        {
+            if (ModelState.IsValid)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["Polizia"].ConnectionString.ToString();
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM Verbal WHERE Importo > 400";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DataViolazione", verbale.DataViolazione);
+                        command.Parameters.AddWithValue("@IndirizzoViolazione", verbale.IndirizzoViolazione);
+                        command.Parameters.AddWithValue("@IdentificativoAgente", verbale.IdentificativoAgente);
+                        command.Parameters.AddWithValue("@DataVerbale", verbale.DataVerbale);
+                        command.Parameters.AddWithValue("@Importo", verbale.Importo);
+                        command.Parameters.AddWithValue("@DecurtamentoPunti", verbale.DecurtamentoPunti);
+                        command.Parameters.AddWithValue("@IdViolazione", verbale.IdViolazione);
+                        command.Parameters.AddWithValue("@IdAnagrafica", verbale.IdAnagrafica);
+
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+
+            }
+
+            return View(verbale);
+        }
     }
 }
 

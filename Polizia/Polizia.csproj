@@ -183,6 +183,7 @@
     <Content Include="Views\Home\Violazione.cshtml" />
     <Content Include="Views\Home\Verbale.cshtml" />
     <Content Include="Views\Home\Anagrafica.cshtml" />
+    <Content Include="Views\Home\Multe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
