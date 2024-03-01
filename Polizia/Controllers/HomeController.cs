@@ -183,7 +183,7 @@ namespace Polizia.Controllers
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT ANAGRAFICA.COGNOME, ANAGRAFICA.NOME, COUNT(ANAGRAFICA.IdAnagrafica) AS TOTALE FROM ANAGRAFICA JOIN VERBALE ON ANAGRAFICA.IdAnagrafica = VERBALE.IdAnagrafica GROUP BY ANAGRAFICA.COGNOME, ANAGRAFICA.NOME";
+                    string query = @"SELECT Anagrafica.Nome, Anagrafica.Cognome, COUNT(ANAGRAFICA.IdAnagrafica) AS TOTALE FROM Anagrafica JOIN Verbal ON Anagrafica.IdAnagrafica = Verbal.IdAnagrafica GROUP BY Anagrafica.Nome, Anagrafica.Cognome,";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -218,7 +218,7 @@ namespace Polizia.Controllers
                 try
                 {
                     conn.Open();
-                    string query = @"SELECT Anagrafica.Cognome, Anagrafica.Nome, SUM(Verbale.DecurtamentoPunti) AS TOTALE FROM ANAGRAFICA JOIN VERBALE ON ANAGRAFICA.IdAnagrafica = VERBALE.IdAnagrafica GROUP BY ANAGRAFICA.COGNOME, ANAGRAFICA.NOME";
+                    string query = @"SELECT Anagrafica.Nome, Anagrafica.Cognome,, SUM(Verbale.DecurtamentoPunti) AS TOTALE FROM Anagrafica JOIN Verbal ON Anagrafica.IdAnagrafica = Verbal.IdAnagrafica GROUP BY Anagrafica.Nome, Anagrafica.Cognome,";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
