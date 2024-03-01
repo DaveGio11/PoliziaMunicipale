@@ -189,9 +189,9 @@ namespace Polizia.Controllers
                     while (reader.Read())
                     {
                         Trasgressori d = new Trasgressori();
-                        d.Cognome = reader["COGNOME"].ToString();
+                        d.Cognome = reader["Cognome"].ToString();
                         d.totale = Convert.ToInt32(reader["TOTALE"]);
-                        d.trasgressori = reader["NOME"].ToString();
+                        d.trasgressori = reader["Nome"].ToString();
 
                         trasgressori.Add(d);
                     }
